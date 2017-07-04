@@ -45,7 +45,7 @@ DIMCOLORS = [(128,0,128), (128,64,0), (128,128,128), (0,128,0), (128,0,0), (0,12
 
 #if we can ever download osr file we can get audio offset from osu file
 
-APIKEY="d059591edd86f98e8053584594d60caf48c52024"
+APIKEY="<YOUR-API-KEY-HERE>"
 mode="0"    #(0 = osu!, 1 = Taiko, 2 = CtB, 3 = osu!mania)
 mapid="555797"#"345189"#"129891"#
 numberofreplays=10
