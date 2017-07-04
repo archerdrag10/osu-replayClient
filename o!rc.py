@@ -1,12 +1,8 @@
-#import urllib
-#import urllib.request
-#import base64
 import lzma
 import json
 import pygame
 import pygame.gfxdraw
 import pygame.freetype
-#import http
 import zipfile
 import glob
 import atexit
@@ -16,11 +12,6 @@ import signal
 import sys
 import string
 import requests#######
-import eyed3
-from eyed3 import mp3
-#import pydub
-#import pydub.utils
-#from pydub.utils import mediainfo#############
 
 BLACK = (0,0,0)
 WHITE = (255,255,255)
@@ -31,9 +22,7 @@ DIMCOLORS = [(128,0,128), (128,64,0), (128,128,128), (0,128,0), (128,0,0), (0,12
 
 #sliders
 
-
 #if a key is pressed and another key is pressed during that key press it should be registered but isnt
-
 
 #delete shit at end
 
@@ -47,7 +36,7 @@ DIMCOLORS = [(128,0,128), (128,64,0), (128,128,128), (0,128,0), (128,0,0), (0,12
 
 APIKEY="<YOUR-API-KEY-HERE>"
 mode="0"    #(0 = osu!std, 1 = osu!taiko, 2 = osu!catch, 3 = osu!mania)
-mapid="555797"#"345189"#"129891"#
+mapid="867819"#"555797"#"345189"#"129891"#
 numberofreplays=10
 speedmultiplier=1
 replaylist = []
@@ -119,11 +108,6 @@ with requests.Session() as s:
         
 
     print("Done retrieving avatars.")
-    #'<a href=\'/u/'
-    #'avatar-holder'
-
-    #p=s.post('https://osu.ppy.sh/u/tumnut')#b/'+mapid)
-    #print(p.text)
     
     local_filename = "temp."+mapid+"osu.txt"
     beatmapsetidstr=""
@@ -499,7 +483,7 @@ atexit.register(exitActions)
 #    pygame.mixer.init(mp3.Mp3AudioFile(glob.glob("temp."+mapid+"unzip/*.mp3")[0]).info.sample_freq)#####
 #except:
 #    print("48000\n48000\n48000\n48000\n48000\n48000\n48000\n48000\n48000\n48000\n48000\n48000\n48000\n48000\n")
-pygame.mixer.init(48000)
+pygame.mixer.init(44100)
 pygame.mixer.music.load(glob.glob("temp."+mapid+"unzip/*.mp3")[0])
 #pygame.mixer.music.play()
 pygame.mixer.music.set_volume(0.3)
